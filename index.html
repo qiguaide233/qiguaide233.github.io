@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>// RANDOM v4.3 // by wzm/萌新c</title>
+    <style>
+        :root {
+            --neon-blue: #0ff;
+            --matrix-green: #0f0;
+        }
+
+        body {
+            background: #000;
+            color: var(--matrix-green);
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .glitch-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border: 3px solid var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0,255,255,0.2);
+        }
+
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom,
+                transparent 50%,
+                rgba(0,255,255,0.05) 51%,
+                transparent 51%);
+            pointer-events: none;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px var(--matrix-green);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h1::after {
+            content: "_";
+            animation: cursor 1s infinite;
+        }
+
+        .badge {
+            background: #111;
+            border: 2px solid var(--neon-blue);
+            padding: 0.8rem;
+            margin: 1rem 0;
+            display: inline-block;
+        }
+
+        .download-terminal {
+            background: #001616;
+            padding: 2rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .download-terminal::before {
+            content: "download:";
+            color: var(--neon-blue);
+            position: absolute;
+            left: 1rem;
+            top: -1.5rem;
+        }
+
+        .cli-command {
+            color: var(--matrix-green);
+            font-size: 1.5rem;
+            text-decoration: none;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .cli-command::before {
+            content: "> ";
+            position: absolute;
+            left: 0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-box {
+            border: 1px solid #333;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .stat-box::after {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 1px solid var(--neon-blue);
+            opacity: 0.3;
+        }
+
+        @keyframes cursor {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    
+    <div class="glitch-container">
+        <h1>RANDOM v4.3</h1>
+        
+        <div class="badge">
+            <span style="color: var(--neon-blue)">// DEVELOPER </span>
+            wzm/萌新c
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span style="color: var(--neon-blue)">ACTIVE_CLASSES:</span><br>
+                徐州市第三十七中学<br>
+                <span style="color: var(--matrix-green)">高二(2)(3)(4)(6)(8)班 已部署</span>
+            </div>
+            
+            <div class="stat-box">
+                <span style="color: var(--neon-blue)">VERSION:</span><br>
+                4.3
+            </div>
+        </div>
+
+        <div class="download-terminal">
+            <a href="https://www.123865.com/s/KypqVv-lnJzH" class="cli-command">
+                https://www.123865.com/s/KypqVv-lnJzH
+            </a>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span style="color: var(--neon-blue)">SYSTEM_REQ:</span><br>
+                • Windows 10+ x64<br>
+                • no more/
+            </div>
+
+            <div class="stat-box">
+                <span style="color: var(--neon-blue)">FEATURE_SET:</span><br>
+                √ 系统概率算法<br>
+                √ 自动去除重复<br>
+                √ 一键重置已抽
+            </div>
+        </div>
+    </div>
+</body>
+</html>
